@@ -1,0 +1,19 @@
+<div class="card">
+   <div class="card-header p-0" id="DBGoNoGo">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDBGoNoGo" aria-expanded="true" aria-controls="collapseDBGoNoGo">
+            DBGoNoGo
+         </button>
+      </h5>
+   </div>
+   <div id="collapseDBGoNoGo" class="collapse" aria-labelledby="DBGoNoGo" data-parent="#mainContainer">
+      <div id="DBGoNoGoBody" class="card-body">
+         DBSignal על פי בנק ישראל: {{res.DBGoNoGo.BOIFailoverIndicator}} <br>
+         {% if not res.DBGoNoGo.DBCustomerFailoverIndicator is none %}
+            {% with DBCustomerFailoverIndicator = res.DBGoNoGo.DBCustomerFailoverIndicator %}
+               {% include 'DBCustomerFailoverIndicator(s).html' ignore missing %}
+            {% endwith %}
+         {% endif %}
+      </div>
+   </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="card">
+   <div class="card-header p-0" id="V2_LoanSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV2_LoanSummary" aria-expanded="true" aria-controls="collapseV2_LoanSummary">
+            סיכום הלוואות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV2_LoanSummary" class="collapse" aria-labelledby="V2_LoanSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V2_LoanSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל סכום ההלוואה המקורי (קרן בלבד).:</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalLoanUtilized)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל התשלום החודשי המתוכנן על פי לוח התשלומים המעודכן ביותר של החוזה, בין אם הוא מורכב מהקרן בלבד, הריבית בלבד, או שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalPlannedMonthlyPayment)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכום ששולם בפועל, בין אם הוא כולל את הקרן בלבד, את הריבית בלבד, או את שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalActualPaidAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל היתרה לתשלום, כולל ריבית וזיקה, בין אם היא עלתה או ירדה. כשאין יתרה לתשלום, וכשיש יתרות אשראי - הערך יהיה אפס (0):</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalCurrentBalance)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכומים (לפני שלוקחים בחשבון חובות בספק וניכויים) שתאריך התשלום שלהם עבר ועדיין לא שולמו (לא כולל תשלומים שזמן הפיגור שלהם אינו עולה על 30 יום):</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalPastDueAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום החוב שנמחק שהוא מעל 200 ₪:</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalForgivenessAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום הביטחונות:</td>
+                  <td>{{"₪{:,.2f}".format(V2_LoanSummary.TotalCollateralCasesAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש חוב בטיפול הוצל"פ:</td>
+                  <td>{{V2_LoanSummary.Q7Any}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש הלוואות בפיגור נכון להיום:</td>
+                  <td>{{V2_LoanSummary.ArrearsAny}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מספר ההלוואות:</td>
+                  <td>{{V2_LoanSummary.TotalOfV2Credit}}</td>
+               </tr>
+               <tr>
+                  <td>מצב אחרון:</td>
+                  <td>{{codes.Status.codes[V2_LoanSummary.LastStatus]}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

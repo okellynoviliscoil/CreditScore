@@ -1,0 +1,41 @@
+<div class="card">
+   <div class="card-header p-0" id="ExecutionProceedingsSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExecutionProceedingsSummary" aria-expanded="true" aria-controls="collapseExecutionProceedingsSummary">
+         סיכום הוצאה לפועל
+         </button>
+      </h5>
+   </div>
+   <div id="collapseExecutionProceedingsSummary" class="collapse" aria-labelledby="ExecutionProceedingsSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="ExecutionProceedingsSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>ספירת כל תיקי הוצאה לפועל:</td>
+                  <td>{{ExecutionProceedingsSummary.TotalExecutionProceedingsFiles}}</td>
+               </tr>
+               <tr>
+                  <td>ספירת כל תיקי הוצאה לפועל הפתוחים:</td>
+                  <td>{{ExecutionProceedingsSummary.TotalOpenedExecutionProceedingsFiles}}</td>
+               </tr>
+               <tr>
+                  <td>מועד פתיחת תיק אחרון:</td>
+                  <td>{{ExecutionProceedingsSummary.LastCaseStartingDate}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום החוב בזמן שהתיק נפתח במשרד ההוצאה לפועל:</td>
+                  <td>{{"₪{:,.2f}".format(ExecutionProceedingsSummary.TotalDebtAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל תביעות שטרות:</td>
+                  <td>{{"₪{:,.2f}".format(ExecutionProceedingsSummary.TotalClaimingBillsDebtAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מימוש פסקי דין:</td>
+                  <td>{{"₪{:,.2f}".format(ExecutionProceedingsSummary.TotalJudgmentDebtAmount)}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

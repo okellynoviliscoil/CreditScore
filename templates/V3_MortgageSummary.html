@@ -1,0 +1,61 @@
+<div class="card">
+   <div class="card-header p-0" id="V3_MortgageSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV3_MortgageSummary" aria-expanded="true" aria-controls="collapseV3_MortgageSummary">
+            סיכום משכנתאות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV3_MortgageSummary" class="collapse" aria-labelledby="V3_MortgageSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V3_MortgageSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל סכום ההלוואה המקורי (קרן בלבד).:</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalLoanUtilized)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל התשלום החודשי המתוכנן על פי לוח התשלומים המעודכן ביותר של החוזה, בין אם הוא מורכב מהקרן בלבד, הריבית בלבד, או שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalPlannedMonthlyPayment)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכום ששולם בפועל, בין אם הוא כולל את הקרן בלבד, את הריבית בלבד, או את שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalActualPaidAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל היתרה לתשלום, כולל ריבית וזיקה, בין אם היא עלתה או ירדה. כשאין יתרה לתשלום, וכשיש יתרות אשראי - הערך יהיה אפס (0):</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalCurrentBalance)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכומים (לפני שלוקחים בחשבון חובות בספק וניכויים) שתאריך התשלום שלהם עבר ועדיין לא שולמו (לא כולל תשלומים שזמן הפיגור שלהם אינו עולה על 30 יום):</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalPastDueAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום החוב שנמחק שהוא מעל 200 ש"ח:</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalForgivenessAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום הביטחונות:</td>
+                  <td>{{"₪{:,.2f}".format(V3_MortgageSummary.TotalCollateralCasesAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש חוב בטיפול הוצל"פ:</td>
+                  <td>{{V3_MortgageSummary.Q7Any}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש משכנתאות בפיגור נכון להיום:</td>
+                  <td>{{V3_MortgageSummary.ArrearsAny}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מספר המשכנתאות:</td>
+                  <td>{{V3_MortgageSummary.TotalOfV3Credit}}</td>
+               </tr>
+               <tr>
+                  <td>מצב אחרון:</td>
+                  <td>{{codes.Status.codes[V3_MortgageSummary.LastStatus]}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

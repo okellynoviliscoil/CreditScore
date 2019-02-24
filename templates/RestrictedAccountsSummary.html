@@ -1,0 +1,33 @@
+<div class="card">
+   <div class="card-header p-0" id="RestrictedAccountsSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseRestrictedAccountsSummary" aria-expanded="true" aria-controls="collapseRestrictedAccountsSummary">
+         סיכום חשבונות בנק מוגבלים
+         </button>
+      </h5>
+   </div>
+   <div id="collapseRestrictedAccountsSummary" class="collapse" aria-labelledby="RestrictedAccountsSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="RestrictedAccountsSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>מספר החשבונות המוגבלים ללקוח :</td>
+                  <td>{{RestrictedAccountsSummary.NumberofAccountsRestricted}}</td>
+               </tr>
+               <tr>
+                  <td>תאריך הגבלת חשבון אחרונה:</td>
+                  <td>{{RestrictedAccountsSummary.LastRestrictionStartingDate}}</td>
+               </tr>
+               <tr>
+                  <td>האם מוגבל חמור:</td>
+                  <td>{{RestrictedAccountsSummary.IsSeverelyRestricted}}</td>
+               </tr>
+               <tr>
+                  <td>סה"כ ידיעות על חשבונות מוגבלים:</td>
+                  <td>{{RestrictedAccountsSummary.TotalRestrictedAccountsRecords}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+   <div class="card-header p-0" id="ReportInfo">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseReportInfo" aria-expanded="true" aria-controls="collapseReportInfo">
+            ReportInfo
+         </button>
+      </h5>
+   </div>
+   <div id="collapseReportInfo" class="collapse" aria-labelledby="ReportInfo" data-parent="#mainContainer">
+      <div id="ReportInfoBody" class="card-body">
+       מספר הזמנה/דוח : {{res.ReportInfo.ReportId}}<br>
+      שם מוצר: {{res.ReportInfo.ProductName}} <br>
+      קוד המוצר לפי סוג המוצר מבין מוצרי הדוח: בסיס, סיכומים ותובנות, כולל מידע עסקי מלא: {{res.ReportInfo.ProductCode}} <br>
+      קוד זיהוי בקשה של הגורם המבקש לשימוש עצמי: {{res.ReportInfo.ClientRef}} <br>
+      הערה של הגורם המבקש לשימוש עצמי: {{res.ReportInfo.ClientComment}} <br>
+      שם פרטי של הנבדק בעברית: {{res.ReportInfo.InputSubjectFirstName}} <br>
+      שם משפחה של הנבדק בעברית: {{res.ReportInfo.InputSubjectLastName}} <br>
+      מספר זיהוי הנבדק(ת.ז./דרכון): {{res.ReportInfo.InputIdentityNumber}} <br>
+      קוד מספר זיהוי: {{res.ReportInfo.InputIdentityNumberTypeCode}} <br>
+      תאריך יצירת הדוח : {{res.ReportInfo.DBReportProducingDate}} <br>
+      מספר מזהה של המדינה לפי רשימת המדינות בטבלת מדינות.: {{res.ReportInfo.InputCountryCode}} <br>
+      </div>
+   </div>
+</div>

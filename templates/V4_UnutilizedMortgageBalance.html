@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="V4_UnutilizedMortgageBalance">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV4_UnutilizedMortgageBalance" aria-expanded="true" aria-controls="collapseV4_UnutilizedMortgageBalance">
+            אישורי משכנתא לא מנוצלים
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV4_UnutilizedMortgageBalance" class="collapse" aria-labelledby="V4_UnutilizedMortgageBalance" data-parent="#CreditInformationBody">
+      <div id="V4_UnutilizedMortgageBalanceBody" class="card-body">
+         {% with object = V4_UnutilizedMortgageBalance %}
+            {% include 'objectWcodes.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

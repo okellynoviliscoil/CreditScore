@@ -1,0 +1,53 @@
+<div class="card">
+   {% if res.ReportOutputs is none %}
+   <div class="card-header p-0" id="ReportOutputs">
+      <h5 class="mb-0">
+         <button class="btn" type="button" data-toggle="" data-target="" aria-expanded="true" aria-controls="">
+            אין תצורות נוספות
+            <img class="p3" src="{{ url_for('static', filename='images/‏‏‏‏pdf48nb_gs.png') }}">
+         </button>
+      </h5>
+   </div>
+   {% else %}
+   <div class="card-header p-0" id="ReportOutputs">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseReportOutputs" aria-expanded="true" aria-controls="collapseReportOutputs">
+            נתוני הדוח בתצורות נוספות
+            <img class="p3" src="{{ url_for('static', filename='images/‏‏pdf48nb.png') }}">
+         </button>
+      </h5>
+   </div>
+   <div id="collapseReportOutputs" class="collapse" aria-labelledby="ReportOutputs" data-parent="#mainContainer">
+      <div id="ReportOutputsBody" class="card-body">
+         <table>
+            <thead>
+               <tr>
+                  <th>שם הקובץ</th>
+                  <th>להורדה</th>
+                  <th>לצפייה</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for pdf in res.ReportOutputs %}
+               <tr>
+                  <td style="direction:ltr;">
+                     {{pdf.Name}}.pdf
+                  </td>
+                  <td>
+                     <a href="getfile?ref={{res.ReportInfo.ClientRef}}&index={{loop.index0}}&disposition=attachment" download>
+                        <img src="{{ url_for('static', filename='images/‏‏pdf48DL.png') }}" alt="להורדת הקובץ">
+                     </a>
+                  </td>
+                  <td>
+                     <a href="getfile?ref={{res.ReportInfo.ClientRef}}&index={{loop.index0}}&disposition=inline" target="_blank">
+                       <img src="{{ url_for('static', filename='images/pdf48.png') }}" alt="לצפייה בקובץ">
+                     </a>
+                  </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+   </div>
+   {% endif %}
+</div>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block container %}
+   {% include 'CreditReport.html' ignore missing %}
+   <!--{% for group in res.CreditReport.CreditInformation|groupby('Credit.ContractType') %}-->
+      <!--{{ group.grouper }}-->
+        <!--{% for item in group.list %}-->
+            <!--{% with object = item %}-->
+               <!--{% include 'objectWcodes.html' ignore missing %}-->
+            <!--{% endwith %}-->
+        <!--{% endfor %}-->
+   <!--{% endfor %}-->
+   <!--{% with object = res.CreditReport.CreditInformation | selectattr('Credit.ContractType', 'equalto', 'V2') %}-->
+      <!--{% include 'objectWcodes.html' ignore missing %}-->
+   <!--{% endwith %}-->
+   {% with object = res %}
+      {% include 'objectWcodes.html' ignore missing %}
+   {% endwith %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<div class="card">
+   <div class="card-header p-0" id="CreditReport">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseCreditReport" aria-expanded="true" aria-controls="collapseCreditReport">
+            דוח אשראי
+         </button>
+      </h5>
+   </div>
+   <div id="collapseCreditReport" class="collapse" aria-labelledby="CreditReport" data-parent="#mainContainer">
+      <div id="CreditReportBody" class="accordion card-body" >
+         תאריך הפקת הדוח: {{res.CreditReport.ReportProducingDate}}
+         {% with MatchedSubject = res.CreditReport.MatchedSubject %}
+            {% include 'MatchedSubject.html' ignore missing %}
+         {% endwith %}
+         {% with Application = res.CreditReport.Application %}
+            {% include 'Application(s).html' ignore missing %}
+         {% endwith %}
+         {% with ExecutionProceedings = res.CreditReport.ExecutionProceedings %}
+            {% include 'ExecutionProceedings.html' ignore missing %}
+         {% endwith %}
+         {% with CreditInformation = res.CreditReport.CreditInformation %}
+            {% include 'CreditInformation.html' ignore missing %}
+         {% endwith %}
+         {% with BankruptcyProceedings = res.CreditReport.BankruptcyProceedings %}
+            {% include 'BankruptcyProceedings_forNAE.html' ignore missing %}
+         {% endwith %}
+         {% with RestrictedAccounts = res.CreditReport.RestrictedAccounts %}
+            {% include 'RestrictedAccounts.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

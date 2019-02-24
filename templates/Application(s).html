@@ -1,0 +1,73 @@
+{% if not Application is none %}
+   <div class="card">
+      <div class="card-header p-0" id="Applications">
+         <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseApplications" aria-expanded="true" aria-controls="collapseApplications">
+               בקשות האשראי
+            </button>
+         </h5>
+      </div>
+      <div id="collapseApplications" class="collapse" aria-labelledby="Applications" data-parent="#CreditReportBody">
+         <div id="ApplicationsBody" class="card-body">
+            <table border="1">
+               <thead>
+                  <tr>
+                     <th>{{codes.ApplicationContractType.title}}</th>
+                     <th>{{codes.Role.title}}</th>
+                     <th>תאריך התחלה מתוכנן</th>
+                     <th>תשלומים בשנה</th>
+                     <th>תשלום מתוכנן</th>
+                     <th>קוד בקשה אצל ספק האשראי</th>
+                     <th>{{codes.Designation.title}}</th>
+                     <th>CCRApplicationCode</th>
+                     <th>Credit Provider Code (Encrypted)</th>
+                     <th>תאריך בקשה</th>
+                     <th>הערה</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for app in Application %}
+                     <tr>
+                        <td>{{codes.ApplicationContractType.codes[app.Application.ApplicationContractType]}}</td>
+                        <td>{{codes.Role.codes[app.Application.Role]}}</td>
+                        <td>  {% with x = app.Application.PlannedStartingDate %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.Application.PaymentFrequencyInAYear %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.Application.PlannedMonthlyPayment %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.Application.CreditProviderApplicationCode %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>{{codes.Designation.codes[app.Application.Designation]}}</td>
+                        <td>  {% with x = app.CCRApplicationCode %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.CreditProviderCodeEncrypted %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.ApplicationDate %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                        <td>  {% with x = app.Note %}
+                                 {% include 'nbspIfNone.html' %}
+                              {% endwith %}
+                        </td>
+                     </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+{% endif %}

@@ -1,0 +1,22 @@
+<div class="card">
+   <div class="card-header p-0" id="DBFields">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDBFields" aria-expanded="true" aria-controls="collapseDBFields">
+            נתוני שיכבה שנייה
+         </button>
+      </h5>
+   </div>
+   <div id="collapseDBFields" class="collapse" aria-labelledby="DBFields" data-parent="#mainContainer">
+      <div id="DBFieldsBody" class="card-body">
+         {% with Aggregates = res.DBFields.Aggregates %}
+            {% include 'Aggregates.html' ignore missing %}
+         {% endwith %}
+         {% with SubtotalAggregates = res.DBFields.SubtotalAggregates %}
+            {% include 'SubtotalAggregates.html' ignore missing %}
+         {% endwith %}
+         {% with DBInsights = res.DBFields.DBInsights %}
+            {% include 'DBInsights.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

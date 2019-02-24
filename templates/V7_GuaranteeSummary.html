@@ -1,0 +1,33 @@
+<div class="card">
+   <div class="card-header p-0" id="V7_GuaranteeSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV7_GuaranteeSummary" aria-expanded="true" aria-controls="collapseV7_GuaranteeSummary">
+            ערבויות ו/או נגזרים
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV7_GuaranteeSummary" class="collapse" aria-labelledby="V7_GuaranteeSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V7_GuaranteeSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סכום הערבויות ו/או הנגזרים:</td>
+                  <td>{{"₪{:,.2f}".format(V7_GuaranteeSummary.TotalCreditLimit)}}</td>
+               </tr>
+               <tr>
+                  <td>סכום הביטחונות:</td>
+                  <td>{{"₪{:,.2f}".format(V7_GuaranteeSummary.TotalCollateralCasesAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סטאטוס ערבות או נגזר אחרון:</td>
+                  <td>{{codes.Status.codes[V7_GuaranteeSummary.LastStatus]}}</td>
+               </tr>
+               <tr>
+                  <td>מספר הערבויות ו/או נגזרים:</td>
+                  <td>{{V7_GuaranteeSummary.TotalOfV7Credit}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

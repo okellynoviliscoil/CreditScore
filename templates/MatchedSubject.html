@@ -1,0 +1,45 @@
+<div class="card">
+   <div class="card-header p-0" id="MatchedSubject">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseMatchedSubject" aria-expanded="true" aria-controls="collapseMatchedSubject">
+            זיהוי הלקוח
+         </button>
+      </h5>
+   </div>
+   <div id="collapseMatchedSubject" class="collapse" aria-labelledby="MatchedSubject" data-parent="#CreditReportBody">
+      <div id="MatchedSubjectBody" class="card-body">
+         {% if not MatchedSubject.Individual.IdentityNumber is none %}
+            מספר ת.ז: {{MatchedSubject.Individual.IdentityNumber}} <br>
+         {% endif %}
+         {% if not MatchedSubject.Individual.FirstName is none %}
+            שם פרטי בעברית: {{MatchedSubject.Individual.FirstName}} <br>
+         {% endif %}
+         {% if not MatchedSubject.Individual.LastName is none %}
+            שם משפחה בעברית: {{MatchedSubject.Individual.LastName}} <br>
+         {% endif %}
+         {% if not MatchedSubject.Individual.LatinFirstName is none %}
+            שם פרטי באנגלית: {{MatchedSubject.Individual.LatinFirstName}} <br>
+         {% endif %}
+         {% if not MatchedSubject.Individual.LatinLastName is none %}
+            שם משפחה באנגלית: {{MatchedSubject.Individual.LatinLastName}} <br>
+         {% endif %}
+         {% if not MatchedSubject.Individual.Dealer is none %}
+            אם הלקוח פעיל כעוסק: {{MatchedSubject.Individual.Dealer}} <br>
+         {% endif %}
+         <div class="card">
+            <div class="card-header p-0" id="Passports">
+               <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePassports" aria-expanded="true" aria-controls="collapsePassports">
+                     דרכונים
+                  </button>
+               </h5>
+            </div>
+            <div id="collapsePassports" class="collapse" aria-labelledby="Passports" data-parent="#MatchedSubjectBody">
+               <div id="PassportsBody" class="card-body">
+                  {% include 'Passport(s).html' ignore missing %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

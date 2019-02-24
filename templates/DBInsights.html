@@ -1,0 +1,209 @@
+<div class="card">
+   <div class="card-header p-0" id="DBInsights">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDBInsights" aria-expanded="true" aria-controls="collapseDBInsights">
+         מידע תבונתי
+         </button>
+      </h5>
+   </div>
+   <div id="collapseDBInsights" class="collapse" aria-labelledby="DBInsights" data-parent="#DBFieldsBody">
+      <div id="DBInsightsBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סיכום יחסי הלוואה לביטחונות:</td>
+                  <td>
+                     <table border="1">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>יחס הלוואה לביטחונות</th>
+                              <th>תאריך ייחוס</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for TotalLTVPerV in DBInsights.TotalLTVPerVSummary %}
+                           <tr>
+                              <td>{{loop.index}}</td>
+                              <td>{{TotalLTVPerV.Amount}}</td>
+                              <td>{{TotalLTVPerV.Date}}</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td>סיכום דרוגי אשראי:</td>
+                  <td>
+                     <table border="1">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>דרוג אשראי</th>
+                              <th>תאריך הדרוג</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for Rating in DBInsights.RatingHistorySummary %}
+                           <tr>
+                              <td>{{loop.index}}</td>
+                              <td>{{Rating.Value}}</td>
+                              <td>{{Rating.Date}}</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td>סיכום סיבות דרוג:</td>
+                  <td>
+                     <table border="1">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>סיבת דרוג</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {% for RatingCommentary in DBInsights.RatingCommentarySummary %}
+                           <tr>
+                              <td>{{loop.index}}</td>
+                              <td>{{RatingCommentary.Description}}</td>
+                           </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td>דירוג אשראי. דירוג האשראי יתבצע על בסיס בניה ותיקוף סטטיסטי של מודל דירוג, כשמקור הנתונים הוא מאגר המידע הלא מזוהה:</td>
+                  <td>{{DBInsights.DBCustomerRating}}</td>
+               </tr>
+               <tr>
+                  <td>מבטא את רמת החומרה והעדכניות של המידע השלילי המהותי
+                     מבוסס על דירוג האשראי הנוכחי (מבטא את החומרה והעדכניות של המידע השלילי בדו""ח):
+                  </td>
+                  <td>{{DBInsights.NegativeDataRating}}</td>
+               </tr>
+               <tr>
+                  <td>דירוג עסקה - יחושב על סמך דירוג הלווה והבטוחה המועמדת לטובת העסקה:</td>
+                  <td>{{DBInsights.DealRating}}</td>
+               </tr>
+               <tr>
+                  <td>מוסר התשלומים של הת.ז:</td>
+                  <td>{{DBInsights.PaymentMorality}}</td>
+               </tr>
+               <tr>
+                  <td>רמת הניהול הפיננסי של הת.ז.:</td>
+                  <td>{{DBInsights.FinancialHealthManagementLevel}}</td>
+               </tr>
+               <tr>
+                  <td>פוטנציאל האשראי של הת.ז.:</td>
+                  <td>{{DBInsights.PotentialCredit}}</td>
+               </tr>
+               <tr>
+                  <td>משך החיים הממוצע של ההלוואות (מח""מ):</td>
+                  <td>{{DBInsights.Duration}}</td>
+               </tr>
+               <tr>
+                  <td>משך החיים הממוצע של ההלוואות ללא משכנתאות (מח""מ בניכוי משכנתאות):</td>
+                  <td>{{DBInsights.DurationExcludeMortgage}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור  גובה החוב הפתוח ביחס לשווי הביטחונות:</td>
+                  <td>{{DBInsights.TotalLTV}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור גובה החוב הפתוח נטו ביחס לשווי הביטחונות:</td>
+                  <td>{{DBInsights.TotalNetLTV}}</td>
+               </tr>
+               <tr>
+                  <td>האם קיים מידע שלילי מהותי בתוקף בדו""ח:</td>
+                  <td>{{DBInsights.CurrentNegativeDataIndicator}}</td>
+               </tr>
+               <tr>
+                  <td>האם קיים מידע שלילי מהותי לא בתוקף:</td>
+                  <td>{{DBInsights.PastNegativeDataIndicator}}</td>
+               </tr>
+               <tr>
+                  <td>מחושב לפי תאריך נוכחי פחות שדה Startingdate המוקדם מבין המופיעים בסכימה
+                     אם פחות משנה, להציג חודשים
+                     אם שנה ומעלה להציג שנים:
+                  </td>
+                  <td>{{DBInsights.CreditHistory}}</td>
+               </tr>
+               <tr>
+                  <td>רמת מינוף:</td>
+                  <td>{{DBInsights.Leverage}}</td>
+               </tr>
+               <tr>
+                  <td>רמת מינוף נטו:</td>
+                  <td>{{DBInsights.NetLeverage}}</td>
+               </tr>
+               <tr>
+                  <td>רמת השימוש בצ'קים:</td>
+                  <td>{{DBInsights.ExtensiveUseCheques}}</td>
+               </tr>
+               <tr>
+                  <td>רמת השימוש בהוראות קבע:</td>
+                  <td>{{DBInsights.ExtensiveUseStandingOrders}}</td>
+               </tr>
+               <tr>
+                  <td>האם עוסק פעיל:</td>
+                  <td>{{DBInsights.CurrentBusinessOwner}}</td>
+               </tr>
+               <tr>
+                  <td>האם היה עוסק בעבר:</td>
+                  <td>{{DBInsights.PastBusinessOwner}}</td>
+               </tr>
+               <tr>
+                  <td>האם בעל מניות בחברה פעילה:</td>
+                  <td>{{DBInsights.CurrentShareholder}}</td>
+               </tr>
+               <tr>
+                  <td>האם היה בעל מניות בחברה בעבר:</td>
+                  <td>{{DBInsights.PastShareholder}}</td>
+               </tr>
+               <tr>
+                  <td>האם מכהן כדירקטור:</td>
+                  <td>{{DBInsights.CurrentDirector}}</td>
+               </tr>
+               <tr>
+                  <td>האם כיהן כדירקטור:</td>
+                  <td>{{DBInsights.PastDirector}}</td>
+               </tr>
+               <tr>
+                  <td>האם שותף בשותפות פעילה:</td>
+                  <td>{{DBInsights.CurrentPartnerAtPartnership}}</td>
+               </tr>
+               <tr>
+                  <td>האם היה שותף בשותפות בעבר:</td>
+                  <td>{{DBInsights.PastPartnerAtPartnership}}</td>
+               </tr>
+               <tr>
+                  <td>תאריך ההלוואה האחרונה שנלקחה:</td>
+                  <td>{{DBInsights.StartingDateOfLatestCreditTaken}}</td>
+               </tr>
+               <tr>
+                  <td>ייעוד ההלוואה האחרונה שנלקחה:</td>
+                  <td>{{DBInsights.DesignationOfLatestCreditTaken}}</td>
+               </tr>
+               <tr>
+                  <td>סכום ההלוואה האחרונה שנלקחה:</td>
+                  <td>{{DBInsights.AmountOfCreditOfLatestCreditTaken}}</td>
+               </tr>
+               <tr>
+                  <td>האם אותר מידע שלילי מהותי במאגר המידע העסקי של D&B:</td>
+                  <td>{{DBInsights.CurrentNegativeBusinessDataIndicator}}</td>
+               </tr>
+               <tr>
+                  <td>תאריך מידע שלילי מהותי במאגר המידע העסקי של D&B:</td>
+                  <td>{{DBInsights.CurrentNegativeBusinessDataDate}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

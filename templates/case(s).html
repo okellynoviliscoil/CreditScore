@@ -1,0 +1,21 @@
+{% for case in BankruptcyProceedings %}
+   <div class="card">
+      <div class="card-header p-0" id="case{{loop.index0}}">
+         <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{loop.index0}}" aria-expanded="true" aria-controls="collapse{{loop.index0}}">
+               תיק {{loop.index}}
+            </button>
+         </h5>
+      </div>
+      <div id="collapse{{loop.index0}}" class="collapse" aria-labelledby="case{{loop.index0}}" data-parent="#BankruptcyProceedingsBody">
+         <div id="case{{loop.index0}}Body" class="card-body">
+            תאריך מתן צו כינוס נכסים: {{case.Case.ReceivershipOrderDate}} <br>
+            תאריך הכרזה על פשיטת רגל: {{case.Case.BankruptcyOrderDate}} <br>
+            המועד שבו אושר הסדר הנושים על ידי בית המשפט: {{case.Case.CreditorSettlementApprovalDate}} <br>
+            המועד בו החליט בית המשפט כי הסדר הנושים הושלם: {{case.Case.SettlementCompletionDate}} <br>
+            תאריך ביטול צו כינוס או הכרזה על פשיטת רגל: {{case.Case.RecivershipORBankruptcyOrderCancellationDate}} <br>
+             תאריך קבלת הפטור: {{case.Case.ExemptionDate}}<br>
+         </div>
+      </div>
+   </div>
+{% endfor %}

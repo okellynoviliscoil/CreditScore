@@ -1,0 +1,29 @@
+<div class="card">
+   <div class="card-header p-0" id="BankruptcyProceedingsSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseBankruptcyProceedingsSummary" aria-expanded="true" aria-controls="collapseBankruptcyProceedingsSummary">
+         סיכום מידע מכונס הנכסים הרשמי
+         </button>
+      </h5>
+   </div>
+   <div id="collapseBankruptcyProceedingsSummary" class="collapse" aria-labelledby="BankruptcyProceedingsSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="BankruptcyProceedingsSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל סכום החוב בתיקים הפתוחים :</td>
+                  <td>{{"₪{:,.2f}".format(BankruptcyProceedingsSummary.TotalOpenProceedingsAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>מועד פתיחת תיק אחרון:</td>
+                  <td>{{BankruptcyProceedingsSummary.LastProceedingsOpenDate}}</td>
+               </tr>
+               <tr>
+                  <td>מועד סגירת תיק אחרון:</td>
+                  <td>{{BankruptcyProceedingsSummary.LastProceedingsCloseDate}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

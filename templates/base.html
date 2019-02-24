@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>{{res.ReportInfo.InputSubjectFirstName}} {{res.ReportInfo.InputSubjectLastName}}</title>
+      <!-- Bootstrap -->
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/collapse.css') }}" rel="stylesheet">
+   </head>
+   <body dir="rtl">
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <!-- collapse object tree on click -->
+      <script src="{{ url_for('static', filename='js/collapse.js') }}"></script>
+
+      <div class="accordion" id="mainContainer">
+         {% block container %}{% endblock %}
+      </div>
+   </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="CreditWorthinessAssessmentIndicators">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseCreditWorthinessAssessmentIndicators" aria-expanded="true" aria-controls="collapseCreditWorthinessAssessmentIndicators">
+            אינדיקטורים הניתנים לדיווח
+         </button>
+      </h5>
+   </div>
+   <div id="collapseCreditWorthinessAssessmentIndicators" class="collapse" aria-labelledby="CreditWorthinessAssessmentIndicators" data-parent="#CreditReportBody">
+      <div id="CreditWorthinessAssessmentIndicatorsBody" class="card-body">
+      נמצא ברשימת חייבים משתמטים: {{CreditWorthinessAssessmentIndicators.IsInMustEvadersList}} <br>
+      לקוח מוגבל או מוגבל חמור: {{CreditWorthinessAssessmentIndicators.AccountRestrictionType}} <br>
+      חייב מוגבל באמצעים: {{CreditWorthinessAssessmentIndicators.IsLimitedMeanDebtor}} <br>
+      </div>
+   </div>
+</div>

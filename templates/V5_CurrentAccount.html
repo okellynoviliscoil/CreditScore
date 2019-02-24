@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="V5_CurrentAccount">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV5_CurrentAccount" aria-expanded="true" aria-controls="collapseV5_CurrentAccount">
+            חשבונות בנק
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV5_CurrentAccount" class="collapse" aria-labelledby="V5_CurrentAccount" data-parent="#CreditInformationBody">
+      <div id="V5_CurrentAccountBody" class="card-body">
+         {% with object = V5_CurrentAccount %}
+            {% include 'objectWcodes.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

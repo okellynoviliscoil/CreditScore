@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="V1_UnutilizedCreditLine">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV1_UnutilizedCreditLine" aria-expanded="true" aria-controls="collapseV1_UnutilizedCreditLine">
+            מסגרות אשראי לא מנוצלות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV1_UnutilizedCreditLine" class="collapse" aria-labelledby="V1_UnutilizedCreditLine" data-parent="#CreditInformationBody">
+      <div id="V1_UnutilizedCreditLineBody" class="card-body">
+         {% with object = V1_UnutilizedCreditLine %}
+            {% include 'objectWcodes.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

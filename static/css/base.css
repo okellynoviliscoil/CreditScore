@@ -1,0 +1,34 @@
+table {
+    font-size: 12px;
+}
+td, th {
+    border: dashed rgba(0, 0, 0, 0.25) 1px;
+    /*border: dotted black 1px;
+    border: solid rgba(0, 0, 0, 0.125) 1px;*/
+}
+
+td th, td td {
+    border: solid rgba(0, 0, 0, 0.75) 1px;
+    /*border: dotted black 1px;
+    border: solid rgba(0, 0, 0, 0.125) 1px;*/
+}
+
+/*a[download] img{
+    float:right;
+}
+
+a[download] span{
+    float:left;
+}
+
+a[download] p{
+  font-size: 10px;
+  text-decoration: underline;
+  width: 50px;
+  border: 1px solid black;
+}
+
+a[download]:hover,
+a[download]:focus {
+  text-decoration: none;
+}*/

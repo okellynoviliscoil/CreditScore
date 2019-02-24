@@ -1,0 +1,69 @@
+<div class="card">
+   <div class="card-header p-0" id="Aggregates">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAggregates" aria-expanded="true" aria-controls="collapseAggregates">
+            תמונת מצב כללית
+         </button>
+      </h5>
+   </div>
+   <div id="collapseAggregates" class="collapse" aria-labelledby="Aggregates" data-parent="#DBFieldsBody">
+      <div id="AggregatesBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>ותק אשראי:</td>
+                  <td>{{Aggregates.CreditSeniorityInYears}}</td>
+               </tr>
+               <tr>
+                  <td>מספר נותני אשראי (יחודיים):</td>
+                  <td>{{Aggregates.CountCreditLenders}}</td>
+               </tr>
+               <tr>
+                  <td>מספר נותני אשראי חוץ בנקאי:</td>
+                  <td>{{Aggregates.CountNonBankCreditLenders}}</td>
+               </tr>
+               <tr>
+                  <td>מספר חשבונות בנק:</td>
+                  <td>{{Aggregates.CountAccounts}}</td>
+               </tr>
+               <tr>
+                  <td>סך האובליגו שאושר:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalCredit)}}</td>
+               </tr>
+               <tr>
+                  <td>סך האשראי (ללא מסגרות שאושרו ולא נוצלו):</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalOutstandingCredit)}}</td>
+               </tr>
+               <tr>
+                  <td>סך האשראי המאזני:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalOnBalanceSheetCredit)}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור ניצול מסגרות האשראי:</td>
+                  <td>{{Aggregates.PercentageCreditUtilized}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור ניצול ממוצע של מסגרות האשראי בחצי השנה האחרונה:</td>
+                  <td>{{Aggregates.PercentageCreditUtilizedForThePastSixMonths}}</td>
+               </tr>
+               <tr>
+                  <td>סך האשראי החוץ מאזני:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalOffBalanceSheetCredit)}}</td>
+               </tr>
+               <tr>
+                  <td>סך ההחזר החודשי על כל ההלוואות (לרבות משכנתאות) בחודש הקרוב:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalReturnsOnLoans)}}</td>
+               </tr>
+               <tr>
+                  <td>סך ההחזרים על המשכנתאות בחודש הקרוב:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalReturnsOnMortgage)}}</td>
+               </tr>
+               <tr>
+                  <td>סך ההחזרים על ההלוואות בנטרול משכנתאות בחודש הקרוב:</td>
+                  <td>{{"₪{:,.2f}".format(Aggregates.TotalReturnsOnLoansExcludeMortgage)}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="V3_Mortgage">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV3_Mortgage" aria-expanded="true" aria-controls="collapseV3_Mortgage">
+            משכנתאות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV3_Mortgage" class="collapse" aria-labelledby="V3_Mortgage" data-parent="#CreditInformationBody">
+      <div id="V3_MortgageBody" class="card-body">
+         {% with object = V3_Mortgage %}
+            {% include 'objectWcodes.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

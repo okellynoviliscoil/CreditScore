@@ -1,0 +1,30 @@
+<div class="card">
+   <div class="card-header p-0" id="CreditWorthinessAssessmentReport">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseCreditWorthinessAssessmentReport" aria-expanded="true" aria-controls="collapseCreditWorthinessAssessmentReport">
+            CreditWorthinessAssessmentReport
+         </button>
+      </h5>
+   </div>
+   <div id="collapseCreditWorthinessAssessmentReport" class="collapse" aria-labelledby="CreditWorthinessAssessmentReport" data-parent="#mainContainer">
+      <div  id="CreditReportBody"class="card-body">
+         {% if not res.CreditWorthinessAssessmentReport is none %}
+            {% if not res.CreditWorthinessAssessmentReport.MatchedSubject is none %}
+               {% with MatchedSubject = res.CreditWorthinessAssessmentReport.MatchedSubject %}
+                  {% include 'MatchedSubject.html' ignore missing %}
+               {% endwith %}
+            {% endif %}
+            {% if not res.CreditWorthinessAssessmentReport.BankruptcyProceedings is none %}
+               {% with BankruptcyProceedings = res.CreditWorthinessAssessmentReport.BankruptcyProceedings %}
+                  {% include 'BankruptcyProceedings.html' ignore missing %}
+               {% endwith %}
+            {% endif %}
+            {% if not res.CreditWorthinessAssessmentReport.CreditWorthinessAssessmentIndicators is none %}
+               {% with CreditWorthinessAssessmentIndicators = res.CreditWorthinessAssessmentReport.CreditWorthinessAssessmentIndicators %}
+                  {% include 'CreditWorthinessAssessmentIndicators.html' ignore missing %}
+               {% endwith %}
+            {% endif %}
+         {% endif %}
+      </div>
+   </div>
+</div>

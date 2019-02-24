@@ -1,0 +1,29 @@
+<div class="card">
+   <div class="card-header p-0" id="V1_UnutilizedCreditLinesSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV1_UnutilizedCreditLinesSummary" aria-expanded="true" aria-controls="collapseV1_UnutilizedCreditLinesSummary">
+            סיכום מסגרות אשראי לא מנוצלות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV1_UnutilizedCreditLinesSummary" class="collapse" aria-labelledby="V1_UnutilizedCreditLinesSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V1_UnutilizedCreditLinesSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>מספר מסגרות אשראי לא מנוצלות:</td>
+                  <td>{{V1_UnutilizedCreditLinesSummary.TotalOfV1Credit}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מסגרת אשראי לא מנוצלת:</td>
+                  <td>{{"₪{:,.2f}".format(V1_UnutilizedCreditLinesSummary.TotalCreditLimit)}}</td>
+               </tr>
+               <tr>
+                  <td>מצב חוזה אחרון:</td>
+                  <td>{{codes.Status.codes[V1_UnutilizedCreditLinesSummary.LastStatus]}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

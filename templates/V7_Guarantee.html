@@ -1,0 +1,16 @@
+<div class="card">
+   <div class="card-header p-0" id="V7_Guarantee">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV7_Guarantee" aria-expanded="true" aria-controls="collapseV7_Guarantee">
+            ערבויות ו/או נגזרים
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV7_Guarantee" class="collapse" aria-labelledby="V7_Guarantee" data-parent="#CreditInformationBody">
+      <div id="V7_GuaranteeBody" class="card-body">
+         {% with object = V7_Guarantee %}
+            {% include 'objectWcodes.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="card">
+   <div class="card-header p-0" id="SubtotalAggregates">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSubtotalAggregates" aria-expanded="true" aria-controls="collapseSubtotalAggregates">
+            מידע סיכומי
+         </button>
+      </h5>
+   </div>
+   <div id="collapseSubtotalAggregates" class="collapse" aria-labelledby="SubtotalAggregates" data-parent="#DBFieldsBody">
+      <div id="SubtotalAggregatesBody" class="card-body">
+         {% with V1_UnutilizedCreditLinesSummary = SubtotalAggregates.V1_UnutilizedCreditLinesSummary %}
+            {% include 'V1_UnutilizedCreditLinesSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V2_LoanSummary = SubtotalAggregates.V2_LoanSummary %}
+            {% include 'V2_LoanSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V3_MortgageSummary = SubtotalAggregates.V3_MortgageSummary %}
+            {% include 'V3_MortgageSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V4_UnutilizedMortgageBalanceSummary = SubtotalAggregates.V4_UnutilizedMortgageBalanceSummary %}
+            {% include 'V4_UnutilizedMortgageBalanceSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V5_CurrentAccountSummary = SubtotalAggregates.V5_CurrentAccountSummary %}
+            {% include 'V5_CurrentAccountSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V6_RenewableLineOfCreditSummary = SubtotalAggregates.V6_RenewableLineOfCreditSummary %}
+            {% include 'V6_RenewableLineOfCreditSummary.html' ignore missing %}
+         {% endwith %}
+         {% with V7_GuaranteeSummary = SubtotalAggregates.V7_GuaranteeSummary %}
+            {% include 'V7_GuaranteeSummary.html' ignore missing %}
+         {% endwith %}
+         {% with BankruptcyProceedingsSummary = SubtotalAggregates.BankruptcyProceedingsSummary %}
+            {% include 'BankruptcyProceedingsSummary.html' ignore missing %}
+         {% endwith %}
+         {% with ExecutionProceedingsSummary = SubtotalAggregates.ExecutionProceedingsSummary %}
+            {% include 'ExecutionProceedingsSummary.html' ignore missing %}
+         {% endwith %}
+         {% with RestrictedAccountsSummary = SubtotalAggregates.RestrictedAccountsSummary %}
+            {% include 'RestrictedAccountsSummary.html' ignore missing %}
+         {% endwith %}
+      </div>
+   </div>
+</div>

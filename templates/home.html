@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="he">
+   <head>
+      <meta charset="UTF-8">
+      <title>דירוג אשראי - בנק ישראל</title>
+      <link rel="stylesheet" href="/static/css/normalize.css">
+      <link rel="stylesheet" href="/static/css/main.css">
+      <link rel="stylesheet" href="/static/css/datepicker.min.css">
+      <link rel="stylesheet" href="/static/css/select2.min.css">
+      <link rel="stylesheet" href="/static/css/jsonRender.css">
+
+      <script src="/static/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+      <script src="/static/js/main.js" type="text/javascript"></script>
+      <script src="/static/js/fields.js" type="text/javascript"></script>
+      <script src="/static/js/datepicker.min.js" type="text/javascript"></script>
+      <script src="/static/js/select2.min.js" type="text/javascript"></script>
+      <script src="/static/js/i18n/he.js" type="text/javascript"></script>
+      <script src="/static/js/jsonRender.js" type="text/javascript"></script>
+   </head>
+   <body>
+      <div id="DIV_7">
+         <div id="DIV_8">
+            <div id="DIV_9">
+               <div id="DIV_10">
+                  <div id="DIV_11">
+                     <div id="DIV_12">
+                        <a id="A_13"><img src="/static/images/fibi_logo.png" alt="" id="IMG_14" /></a>
+                     </div>
+                  </div>
+               </div>
+               <div id="DIV_15">
+                  <div id="DIV_16">
+                     <span id="submit_dnb_dwa" class="menu1">חיווי אשראי - CWA – Credit Worthiness Assessment</span>
+                     <span id="submit_dnb_nae"  class="menu1">דו"ח אשראי - NAE – New Application Enquiry</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="DIV_21">
+            <h5>פרטי המבקש</h5>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_FirstName" class="label">שם פרטי<span class="remark">(בעברית)</span></span>
+               <input name="FirstName" id="FirstName" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_LastName" class="label">שם משפחה<span class="remark">(בעברית)</span></span>
+               <input name="LastName" id="LastName" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_LatinFirstName" class="label">שם פרטי<span class="remark">(באותיות לטיניות)</span></span>
+               <input name="LatinFirstName" id="LatinFirstName" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_LatinLastName" class="label">שם משפחה<span class="remark">(באותיות לטיניות)</span></span>
+               <input name="LatinLastName" id="LatinLastName" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%;">
+               <span id="lbl_IdentityNumberTypeCode" class="label">סוג מספר זיהוי</span>
+               <label class="rfldlbl">
+               <input type="radio" name="IdentityNumberTypeCode" value="1" id="IdentityNumberTypeCode" class="rfld" />מספר ת.ז.
+               </label>
+               <label class="rfldlbl">
+               <input type="radio" name="IdentityNumberTypeCode" value="2" id="IdentityNumberTypeCode" class="rfld" />דרכון
+               </label>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_IdentityNumber" class="label">מספר זיהוי</span>
+               <input name="IdentityNumber" id="IdentityNumber" type="text" class="fld"/>
+            </div>
+            <div id="CountryCodeContainer" class="select-oneContainer">
+               <span id="lbl_CountryCode" class="label">מדינה</span>
+               <select name="CountryCode" id="CountryCode" class="fld cfld">
+                  <option value="238"> איי פוקלנד
+                  <option value="222">אֶל סלוודור
+                  <option value="800">אוגנדה
+                  <option value="860">אוזבקיסטן
+                  <option value="40">אוסטרייה
+                  <option value="36">אוסטרליה
+                  <option value="804">אוקראינה
+                  <option value="858">אורוגוויי
+                  <option value="31">אזרבייג'אן
+                  <option value="380">איטליה
+                  <option value="248">איי אלאנד
+                  <option value="44">איי באהאמה
+                  <option value="92">איי בתולה (הבריטיים)
+                  <option value="850">איי בתולה (של ארה"ב)
+                  <option value="334">איי הרד ומקדונלד
+                  <option value="580">איי מריאנה הצפוניים
+                  <option value="584">איי מרשל
+                  <option value="234">איי פארו
+                  <option value="184">איי קוק
+                  <option value="166">איי קוקוס
+                  <option value="136">איי קיימאן
+                  <option value="90">איי שלמה
+                  <option value="360">אינדונזיה
+                  <option value="352">איסלנד
+                  <option value="364">איראן
+                  <option value="372">אירלנד
+                  <option value="8">אלבניה
+                  <option value="12">אלג'יריה
+                  <option value="660">אנגווילה
+                  <option value="24">אנגולה
+                  <option value="20">אנדורה
+                  <option value="10">אנטארקטיקה
+                  <option value="28">אנטיגווה וברבודה
+                  <option value="233">אסטוניה
+                  <option value="4">אפגניסטן
+                  <option value="218">אקוודור
+                  <option value="32">ארגנטינה
+                  <option value="533">ארובה
+                  <option value="232">אריטראה
+                  <option value="51">ארמניה
+                  <option value="840">ארצות הברית
+                  <option value="231">אתיופיה
+                  <option value="64">בהוטאן
+                  <option value="100">בולגריה
+                  <option value="68">בוליביה
+                  <option value="70">בוסנייה והרצגובינה
+                  <option value="72">בוצוואנה
+                  <option value="108">בורונדי
+                  <option value="854">בורקינה פאסו
+                  <option value="48">בחריין
+                  <option value="112">בלארוס
+                  <option value="56">בלגייה
+                  <option value="84">בליז
+                  <option value="50">בנגלדש
+                  <option value="204">בנין
+                  <option value="52">ברבדוס
+                  <option value="76">ברזיל
+                  <option value="826">בריטניה
+                  <option value="784">ברית האמירויות הערביות
+                  <option value="60">ברמודה
+                  <option value="239">ג'ורג'ייה הדרומית ואיי סנדוויץ' הדרומיים
+                  <option value="262">ג'יבוטי
+                  <option value="388">ג'מייקה
+                  <option value="266">גאבון
+                  <option value="268">גאורגייה
+                  <option value="288">גאנה
+                  <option value="316">גואם
+                  <option value="312">גוודלופ
+                  <option value="320">גווטמלה
+                  <option value="328">גיאנה
+                  <option value="254">גיאנה הצרפתית
+                  <option value="292">גיברלטר
+                  <option value="324">גינֵאה
+                  <option value="624">גינֵאה-ביסאו
+                  <option value="226">גינֵאה המשוונית
+                  <option value="598">גינאה-ניו פאפואה
+                  <option value="270">גמבייה
+                  <option value="304">גרינלנד
+                  <option value="276 (1)">גרמניה
+                  <option value="308">גרנדה
+                  <option value="670">גרנדין ואיי וינסנט סנט
+                  <option value="96">דארוסלאם ברוניי
+                  <option value="212">דומיניקה
+                  <option value="208">דנמרק
+                  <option value="710">דרום אפריקה
+                  <option value="74">האי בובה
+                  <option value="574">האי נורפוק
+                  <option value="162">האי קריסמס
+                  <option value="332">האיטי
+                  <option value="16">האמריקנית סמואה
+                  <option value="530">האנטילים ההולנדיים
+                  <option value="581">הברית ארצות של שונים איים באוקיינוס השקט
+                  <option value="356">הודו
+                  <option value="528">הולנד
+                  <option value="344">הונג קונג
+                  <option value="348">הונגריה
+                  <option value="340">הונדורס
+                  <option value="540">החדשה קלדוניה
+                  <option value="86">הטריטוריה הבריטית באוקיינוס ההודי
+                  <option value="275">הטריטוריה הפלסטינית המוחזקת
+                  <option value="260">הטריטוריות הצרפתיות הדרומיות
+                  <option value="654">הלנה סנט
+                  <option value="732">המערבית סהרה
+                  <option value="643">הפדרציה של רוסיה
+                  <option value="258">הצרפתית פולינזיה
+                  <option value="214">הרפובליקה הדומוניניקנית
+                  <option value="180">הרפובליקה הדמוקרטית של קונגו
+                  <option value="140">הרפובליקה המרכז אפריקנית
+                  <option value="548">ואנואטו
+                  <option value="876">ווליס ופוטונה
+                  <option value="336">וטיקן
+                  <option value="704">וייטנאם
+                  <option value="666">ומיקלון פייר סנט
+                  <option value="659">ונוויס קיטס סנט
+                  <option value="862">ונצואלה
+                  <option value="554">זילנד ניו
+                  <option value="716">זימבבווה
+                  <option value="894">זמבייה
+                  <option value="384">חוף השנהב
+                  <option value="762">טג'יקיסטן
+                  <option value="798">טובאלו
+                  <option value="768">טוגו
+                  <option value="776">טונגה
+                  <option value="788">טוניסיה
+                  <option value="772">טוקלאו
+                  <option value="792">טורקייה
+                  <option value="795">טורקמניסטן
+                  <option value="158">טייוואן
+                  <option value="626">טימור המזרחית
+                  <option value="834">טנזניה
+                  <option value="780">טרינידד וטובאגו
+                  <option value="796">טרקס ואיי קייקוס
+                  <option value="300">יוון
+                  <option value="392">יפן
+                  <option value="400">ירדן
+                  <option value="376">ישראל
+                  <option value="414">כוויית
+                  <option value="132">כף ורדה
+                  <option value="418">לאוס
+                  <option value="422">לבנון
+                  <option value="434">לוב
+                  <option value="442">לוקסמבורג
+                  <option value="428">לטבייה
+                  <option value="430">ליבריה
+                  <option value="440">ליטא
+                  <option value="438">ליכטנשטיין
+                  <option value="426">לסוטו
+                  <option value="478">מאוריטניה
+                  <option value="480">מאוריציוס
+                  <option value="175">מאיוט
+                  <option value="744">מאיין ויאן סוולברד
+                  <option value="466">מאלי
+                  <option value="450">מדגסקר
+                  <option value="508">מוזמביק
+                  <option value="498">מולדובה
+                  <option value="496">מונגוליה
+                  <option value="500">מונסראט
+                  <option value="492">מונקו
+                  <option value="104">מייאנמאר
+                  <option value="583">מיקרונזיה
+                  <option value="454">מלאווי
+                  <option value="462">מלדיווים
+                  <option value="458">מלזיה
+                  <option value="470">מלטה
+                  <option value="818">מצרים
+                  <option value="446">מקאו
+                  <option value="807">מקדוניה
+                  <option value="484">מקסיקו
+                  <option value="504">מרוקו
+                  <option value="474">מרטיניק
+                  <option value="520">נאורו
+                  <option value="578">נורווגיה
+                  <option value="570">ניאו
+                  <option value="566">ניגריה
+                  <option value="562">ניז'ר
+                  <option value="558">ניקראגווה
+                  <option value="516">נמיביה
+                  <option value="524">נפאל
+                  <option value="678">סאו טומה ופרינסיפה
+                  <option value="736">סודאן
+                  <option value="748">סווזילנד
+                  <option value="706">סומליה
+                  <option value="760">סוריה
+                  <option value="740">סורינאם
+                  <option value="694">סיירה לאונה
+                  <option value="690">סיישל
+                  <option value="156">סין
+                  <option value="702">סינגפור
+                  <option value="705">סלובניה
+                  <option value="703">סלובקיה
+                  <option value="882">סמואה
+                  <option value="674">סן מרינו
+                  <option value="686">סנגאל
+                  <option value="662">סנט לוסייה
+                  <option value="724">ספרד
+                  <option value="891">סרבייה ומונטנגרו
+                  <option value="144">סרי לנקה
+                  <option value="512">עומאן
+                  <option value="368">עיראק
+                  <option value="682">ערב הסעודית
+                  <option value="585">פאלאו
+                  <option value="616">פולין
+                  <option value="620">פורטוגל
+                  <option value="242">פיג'י
+                  <option value="612">פיטקרן
+                  <option value="608">פיליפינים
+                  <option value="246">פינלנד
+                  <option value="591">פנמה
+                  <option value="586">פקיסטן
+                  <option value="600">פרגוויי
+                  <option value="604">פרו
+                  <option value="148">צ'אד
+                  <option value="152">צ'ילה
+                  <option value="250">צרפת
+                  <option value="634">קאטאר
+                  <option value="192">קובה
+                  <option value="170">קולומבייה
+                  <option value="174">קומורוס
+                  <option value="178">קונגו
+                  <option value="188">קוסטה ריקה
+                  <option value="410">קוראה הדרומית
+                  <option value="408">קוראה הצפונית
+                  <option value="398">קזחסטן
+                  <option value="417">קירגיזסטן
+                  <option value="296">קיריבאטי
+                  <option value="116">קמבודיה
+                  <option value="120">קמרון
+                  <option value="124">קנדה
+                  <option value="404">קניה
+                  <option value="196">קפריסין
+                  <option value="191">קרואטיה
+                  <option value="638">ראוניון
+                  <option value="646">רואנדה
+                  <option value="642">רומניה
+                  <option value="630">ריקו פורטו
+                  <option value="203">רפובליקה של צ'כיה
+                  <option value="752">שוודיה
+                  <option value="756">שווייץ
+                  <option value="764">תאיילנד
+                  <option value="887">תימן
+               </select>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <label id="lbl_FlagCustomerInformed" class="cfld label">
+               <input name="FlagCustomerInformed" id="FlagCustomerInformed" type="checkbox" class="chfld" value="1"/>הלקוח מיודע על בקשת דוח האשראי
+               </label>
+               <span style="display:block; width: 170px;">&nbsp;</span>
+            </div>
+            <h5 align="center">פרטי הבקשה</h5>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_CreditAmount" class="label">סכום האשראי</span>
+               <input name="CreditAmount" id="CreditAmount" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_PlannedStartingDate" class="label">תאריך התחלה מתוכנן</span>
+               <input name="PlannedStartingDate" id="PlannedStartingDate" type="text" class="fld docs-date"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_PaymentFrequencyInAYear" class="label">תשלומים בשנה</span>
+               <input name="PaymentFrequencyInAYear" id="PaymentFrequencyInAYear" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_PlannedMonthlyPayment" class="label">סכום תשלום חודשי</span>
+               <input name="PlannedMonthlyPayment" id="PlannedMonthlyPayment" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="lbl_Designation" class="label">מטרת האשראי</span>
+               <input name="Designation" id="Designation" type="text" class="fld"/>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span class="label"></span>
+                <span class="fld" style="border:0"></span>
+            </div>
+            <div style="white-space: normal; width: 100%">
+               <span id="hhh"></span>
+            </div>
+            </div>
+           </div>
+      </div>
+   </body>
+</html>

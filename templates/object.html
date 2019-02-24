@@ -1,0 +1,20 @@
+
+    {% if object is mapping %}
+        <ul{{displayProp}}>
+        {% for key in object %}
+            <li><span>{{key}}:</span>
+            {% with object = object[key], displayProp = ' style=display:none;' %}
+                {% include 'object.html' ignore missing %}
+            {% endwith %}
+        {% endfor %}
+                </ul>
+    {% elif object is iterable and object is not string %}
+        <ul{{displayProp}}>
+        {% for key in object %}
+            {% with object = key, displayProp = ' style=display:none;' %}
+            <li><span>{{loop.index}}:</span>{% include 'object.html' ignore missing %}</li>
+            {% endwith %}
+         {% endfor %}</ul>
+    {% else %}
+        {{object}}</li>
+    {% endif %}

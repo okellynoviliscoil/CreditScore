@@ -1,0 +1,41 @@
+{
+	"CreditSeniorityInYears": {
+		"title": "ותק אשראי"
+	},
+	"CountCreditLenders": {
+		"title": "מספר נותני אשראי (יחודיים)"
+	},
+	"CountNonBankCreditLenders": {
+		"title": "מספר נותני אשראי חוץ בנקאי"
+	},
+	"CountAccounts": {
+		"title": "מספר חשבונות בנק"
+	},
+	"TotalCredit": {
+		"title": "סך האובליגו שאושר"
+	},
+	"TotalOutstandingCredit": {
+		"title": "סך האשראי (ללא מסגרות שאושרו ולא נוצלו)"
+	},
+	"TotalOnBalanceSheetCredit": {
+		"title": "סך האשראי המאזני"
+	},
+	"TotalOffBalanceSheetCredit": {
+		"title": "סך האשראי החוץ מאזני"
+	},
+	"PercentageCreditUtilized": {
+		"title": "שיעור ניצול מסגרות האשראי"
+	},
+	"PercentageCreditUtilizedForThePastSixMonths": {
+		"title": "שיעור ניצול ממוצע של מסגרות האשראי בחצי השנה האחרונה"
+	},
+	"TotalReturnsOnLoans": {
+		"title": "סך ההחזר החודשי על כל ההלוואות (לרבות משכנתאות) בחודש הקרוב"
+	},
+	"TotalReturnsOnMortgage": {
+		"title": "מחשב את סך ההחזרים על המשכנתאות בחודש הקרוב"
+	},
+	"TotalReturnsOnLoansExcludeMortgage": {
+		"title": "מחשב את סך ההחזרים על ההלוואות בנטרול משכנתאות בחודש הקרוב"
+	}
+}

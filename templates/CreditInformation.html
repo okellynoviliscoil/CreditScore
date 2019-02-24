@@ -1,0 +1,34 @@
+<div class="card">
+   <div class="card-header p-0" id="CreditInformation">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseCreditInformation" aria-expanded="true" aria-controls="collapseCreditInformation">
+            מידע צרכני
+         </button>
+      </h5>
+   </div>
+   <div id="collapseCreditInformation" class="collapse" aria-labelledby="CreditInformation" data-parent="#CreditReportBody">
+      <div id="CreditInformationBody" class="card-body">
+          {% with V1_UnutilizedCreditLine = CreditInformation | selectattr('V1_UnutilizedCreditLine') %}
+             {% include 'V1_UnutilizedCreditLine.html' ignore missing %}
+          {% endwith %}
+          {% with V2_Loan = CreditInformation | selectattr('V2_Loan') %}
+             {% include 'V2_Loan.html' ignore missing %}
+          {% endwith %}
+          {% with V3_Mortgage = CreditInformation | selectattr('V3_Mortgage') %}
+             {% include 'V3_Mortgage.html' ignore missing %}
+          {% endwith %}
+          {% with V4_UnutilizedMortgageBalance = CreditInformation | selectattr('V4_UnutilizedMortgageBalance') %}
+             {% include 'V4_UnutilizedMortgageBalance.html' ignore missing %}
+          {% endwith %}
+          {% with V5_CurrentAccount = CreditInformation | selectattr('V5_CurrentAccount') %}
+             {% include 'V5_CurrentAccount.html' ignore missing %}
+          {% endwith %}
+          {% with V6_RenewableLineOfCredit = CreditInformation | selectattr('V6_RenewableLineOfCredit') %}
+             {% include 'V6_RenewableLineOfCredit.html' ignore missing %}
+          {% endwith %}
+          {% with V7_Guarantee = CreditInformation | selectattr('V7_Guarantee') %}
+             {% include 'V7_Guarantee.html' ignore missing %}
+          {% endwith %}
+      </div>
+   </div>
+</div>

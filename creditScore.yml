@@ -1,0 +1,254 @@
+swagger: "2.0"
+info:
+  description: פיילוט דירוג אשראי באמצעות לשכות מידע
+  version: "1.0.0"
+  title: פיילוט דירוג אשראי באמצעות לשכות מידע
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /dnb/cwa:
+    get:
+      produces:
+        - "text/html"
+      operationId: "d&b.cwa"
+      tags:
+        - "D&B"
+      summary: "חיווי אשראי - CWA – Credit Worthiness Assessment"
+      description: "חיווי אשראי - CWA – Credit Worthiness Assessment"
+      parameters:
+        - name: CountryCode
+          in: query
+          type: integer
+          description: קוד מדינה
+        - name: FirstName
+          in: query
+          type: string
+          description: שם פרטי
+          required: True
+        - name: LastName
+          in: query
+          type: string
+          description: שם משפחה
+        - name: LatinFirstName
+          in: query
+          type: string
+          description: שם פרטי בלטינית
+        - name: LatinLastName
+          in: query
+          type: string
+          description: שם משפחה בלטינית
+        - name: IdentityNumber
+          in: query
+          type: string
+          description: מספר זיהוי
+        - name: IdentityNumberTypeCode
+          in: query
+          type: integer
+          description: סוג מספר זיהוי(1-ת.ז.  2-דרכון)
+        - name: FlagCustomerInformed
+          in: query
+          type: string
+          description: הלקוח מיודע על הבקשה(1-true)
+        - name: CreditAmount
+          in: query
+          type: integer
+          description: סכום אשראי
+        - name: PaymentFrequencyInAYear
+          in: query
+          type: integer
+          description: מספר תשלומים בשנה
+        - name: PlannedMonthlyPayment
+          in: query
+          type: integer
+          description: סכום תשלום חודשי
+        - name: PlannedStartingDate
+          in: query
+          type: string
+          description: תאריך התחלה מתוכנן
+        - name: Designation
+          in: query
+          type: string
+          description: מטרת האשראי
+        - name: Template
+          in: query
+          type: string
+          description: תבנית תצוגה
+      responses:
+        200:
+          description: "תשובה"
+  /dnb/nae:
+    get:
+      produces:
+        - "text/html"
+      operationId: "d&b.nae"
+      tags:
+        - "D&B"
+      summary: "דוח אשראי - NAE – New Application Enquiry"
+      description: "דוח אשראי - NAE – New Application Enquiry"
+      parameters:
+        - name: CountryCode
+          in: query
+          type: integer
+          description: קוד מדינה
+        - name: FirstName
+          in: query
+          type: string
+          description: שם פרטי
+          required: True
+        - name: LastName
+          in: query
+          type: string
+          description: שם משפחה
+        - name: LatinFirstName
+          in: query
+          type: string
+          description: שם פרטי בלטינית
+        - name: LatinLastName
+          in: query
+          type: string
+          description: שם משפחה בלטינית
+        - name: IdentityNumber
+          in: query
+          type: string
+          description: מספר זיהוי
+        - name: IdentityNumberTypeCode
+          in: query
+          type: integer
+          description: סוג מספר זיהוי(1-ת.ז.  2-דרכון)
+        - name: FlagCutomerConsent
+          in: query
+          type: string
+          description: הלקוח הסכים לבקשה(1-true)
+        - name: FlagCustomerIdentificationWhenCustomerGaveConsentAccordingToRegulations
+          in: query
+          type: string
+          description: הלקוח זוהה בוודאות בעת מתן הסכמתו לקבלת הדוח(1-true)
+        - name: CreditAmount
+          in: query
+          type: integer
+          description: סכום אשראי
+        - name: PaymentFrequencyInAYear
+          in: query
+          type: integer
+          description: מספר תשלומים בשנה
+        - name: PlannedMonthlyPayment
+          in: query
+          type: integer
+          description: סכום תשלום חודשי
+        - name: PlannedStartingDate
+          in: query
+          type: string
+          description: תאריך התחלה מתוכנן
+        - name: Designation
+          in: query
+          type: string
+          description: מטרת האשראי
+        - name: ApplicationContractType
+          in: query
+          type: string
+          description: קוד החוזה
+        - name: CreditProviderApplicationCode
+          in: query
+          type: string
+          description: קוד פנימי של החוזה החדש
+        - name: Role
+          in: query
+          type: string
+          description: תפקיד הנבדק בחוזה
+        - name: Template
+          in: query
+          type: string
+          description: תבנית תצוגה
+      responses:
+        200:
+          description: "תשובה"
+  /dnb/getfile:
+    get:
+      produces:
+        - "application/pdf"
+      operationId: "d&b.get_file_by_ref"
+      tags:
+        - "D&B"
+      summary: "הורדת קובץ"
+      description: "הורדת קובץ"
+      parameters:
+        - name: ref
+          in: query
+          type: string
+          description: מזהה טרנזקציה
+          required: True
+        - name: index
+          in: query
+          type: integer
+          description: אינדקס
+        - name: disposition
+          in: query
+          type: string
+          description: disposition
+      responses:
+        200:
+          description: "תשובה"
+  /dnb/gettimestamps:
+    get:
+      produces:
+        - "application/json"
+      operationId: "d&b.get_timestamps_by_ref"
+      tags:
+        - "D&B"
+      summary: "חתימות זמן"
+      description: "חתימות זמן"
+      parameters:
+        - name: ref
+          in: query
+          type: string
+          description: מזהה טרנזקציה
+          required: True
+      responses:
+        200:
+          description: "תשובה"
+  /dnb/show:
+    get:
+      produces:
+        - "text/html"
+      operationId: "d&b.show_by_ref"
+      tags:
+        - "D&B"
+      summary: "הצגה חוזרת לפי מזהה טרנזקציה"
+      description: "הצגה חוזרת לפי מזהה טרנזקציה"
+      parameters:
+        - name: ref
+          in: query
+          type: string
+          description: מזהה טרנזקציה
+          required: True
+        - name: Template
+          in: query
+          type: string
+          description: תבנית תצוגה
+      responses:
+        200:
+          description: "תשובה"
+  /dnb/showT:
+    get:
+      produces:
+        - "text/html"
+      operationId: "d&b.show_transaction_by_ref"
+      tags:
+        - "D&B"
+      summary: "הצגת טרנזקציה"
+      description: "הצגת טרנזקציה"
+      parameters:
+        - name: ref
+          in: query
+          type: string
+          description: מזהה טרנזקציה
+          required: True
+      responses:
+        200:
+          description: "תשובה"

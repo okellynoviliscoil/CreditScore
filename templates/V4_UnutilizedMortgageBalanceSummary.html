@@ -1,0 +1,29 @@
+<div class="card">
+   <div class="card-header p-0" id="V4_UnutilizedMortgageBalanceSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV4_UnutilizedMortgageBalanceSummary" aria-expanded="true" aria-controls="collapseV4_UnutilizedMortgageBalanceSummary">
+         סיכום אישורי משכנתא לא מנוצלים
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV4_UnutilizedMortgageBalanceSummary" class="collapse" aria-labelledby="V4_UnutilizedMortgageBalanceSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V4_UnutilizedMortgageBalanceSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל מסגרת משכנתא לא מנוצלת. מסגרת אשראי זו עשויה להיות מקטנת או מוגדלת בהתאם לניצול של סוגי חוזים אחרים. הערה: אם מסגרת האשראי מנוצלת במלואה, יש להגדיר את השדה עם 0 עד שהחוזה נסגר.:</td>
+                  <td>{{"₪{:,.2f}".format(V4_UnutilizedMortgageBalanceSummary.TotalCreditLimit)}}</td>
+               </tr>
+               <tr>
+                  <td>סטאטוס מסגרת משכנתא אחרונה לא מנוצלת:</td>
+                  <td>{{codes.Status.codes[V4_UnutilizedMortgageBalanceSummary.LastStatus]}}</td>
+               </tr>
+               <tr>
+                  <td>מספר מסגרות משכנתא לא מנוצלות:</td>
+                  <td>{{V4_UnutilizedMortgageBalanceSummary.TotalOfV4Credit}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

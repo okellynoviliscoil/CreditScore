@@ -1,0 +1,16 @@
+{% for Indicator in DBCustomerFailoverIndicator %}
+   <div class="card">
+      <div class="card-header p-0" id="Indicator{{loop.index0}}">
+         <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#IndicatorCollapse{{loop.index0}}" aria-expanded="true" aria-controls="IndicatorCollapse{{loop.index0}}">
+               מודל לקוח ייעודי {{loop.index}}
+            </button>
+         </h5>
+      </div>
+      <div id="IndicatorCollapse{{loop.index0}}" class="collapse" aria-labelledby="Indicator{{loop.index0}}" data-parent="#IndicatorportsBody">
+         <div id="Indicator{{loop.index0}}Body" class="card-body">
+            {{Indicator.DBFailoverIndicatorName}}: {{Indicator.DBFailoverIndicatorResult}}
+         </div>
+      </div>
+   </div>
+{% endfor %}

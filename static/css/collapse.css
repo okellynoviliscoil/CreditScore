@@ -1,0 +1,36 @@
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	padding-right: 1.3em;
+}
+
+li:before {
+	font-family: 'Courier New', Courier, monospace;
+	content: "+";
+	display: inline-block;
+	margin-right: -1.3em;
+	/* same as padding-left set on li */
+	width: 1.3em;
+	/* same as padding-left set on li */
+}
+
+li.collapsed:before {
+	content: "-";
+	display: inline-block;
+	margin-right: -1.3em;
+	/* same as padding-left set on li */
+	width: 1.3em;
+	/* same as padding-left set on li */
+}
+
+li.last:before {
+	content: "•";
+	display: inline-block;
+	margin-right: -1.3em;
+	/* same as padding-left set on li */
+	width: 1.3em;
+	/* same as padding-left set on li */
+}

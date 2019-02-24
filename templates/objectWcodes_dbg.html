@@ -1,0 +1,30 @@
+
+    {% if object is mapping %}
+        <ul{{displayProp}}>
+        {% for key in object %}
+            <li><span>
+                {% if titles[key] %}
+                    {% if titles[key].title == '' %}
+                        <b>[{{key}}]:</b>
+                    {% else %}
+                        {{titles[key].title}}, ([{{key}}]),:
+                    {% endif %}
+                {% else %}
+                    [{{key}}]:
+                {% endif %}
+            </span>
+            {% with object = object[key], displayProp = ' style=display:none;' %}
+                {% include 'objectWcodes_dbg.html' ignore missing %}
+            {% endwith %}
+        {% endfor %}
+                </ul>
+    {% elif object is iterable and object is not string %}
+        <ul{{displayProp}}>
+        {% for key in object %}
+            {% with object = key, displayProp = ' style=display:none;' %}
+            <li><span>{{loop.index}}:</span>{% include 'objectWcodes_dbg.html' ignore missing %}</li>
+            {% endwith %}
+         {% endfor %}</ul>
+    {% else %}
+        {{object}}</li>
+    {% endif %}

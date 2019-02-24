@@ -1,0 +1,23 @@
+<div class="card">
+   <div class="card-header p-0" id="ReportOutputs">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseReportOutputs" aria-expanded="true" aria-controls="collapseReportOutputs">
+            נתוני הדוח בתצורות נוספות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseReportOutputs" class="collapse" aria-labelledby="ReportOutputs" data-parent="#mainContainer">
+      <div id="ReportOutputsBody" class="card-body">
+         {% for pdf in res.ReportOutputs %}
+            <a href="getfile?ref={{res.ReportInfo.ClientRef}}&index={{loop.index0}}&disposition=attachment" download>
+               <img src="{{ url_for('static', filename='images/‏‏pdf48DL.png') }}" alt="{{pdf.Name}}.pdf">
+               <span>{{pdf.Name}}.pdf</span>
+            </a>
+            <a href="getfile?ref={{res.ReportInfo.ClientRef}}&index={{loop.index0}}&disposition=inline" target="_blank">
+               <img src="{{ url_for('static', filename='images/pdf48.png') }}" alt="{{pdf.Name}}.pdf">
+               <span>{{pdf.Name}}.pdf</span>
+            </a>
+         {% endfor %}
+      </div>
+   </div>
+</div>

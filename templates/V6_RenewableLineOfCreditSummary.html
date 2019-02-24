@@ -1,0 +1,77 @@
+<div class="card">
+   <div class="card-header p-0" id="V6_RenewableLineOfCreditSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV6_RenewableLineOfCreditSummary" aria-expanded="true" aria-controls="collapseV6_RenewableLineOfCreditSummary">
+            מסגרות אשראי מתחדשות
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV6_RenewableLineOfCreditSummary" class="collapse" aria-labelledby="V6_RenewableLineOfCreditSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V6_RenewableLineOfCreditSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל תקרת האשראי המקסימלית בחודש הדיווח.:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalCreditLimit)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מסגרת אשראי מנוצלת. ייקבע הסכום הגבוה ביותר שנוצל בחודש הדיווח.:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalCreditUtilized)}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור סך ניצול מסגרת האשראי:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.PercentageCreditUtilized}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל התשלום החודשי המתוכנן לחודש הדיווח על פי לוח התשלומים המעודכן ביותר של החוזה, בין אם הוא מורכב מהקרן בלבד, הריבית בלבד, או שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalPlannedMonthlyPayment)}}</td>
+               </tr>
+               <tr>
+                  <td> סך כל הסכום ששולם בפועל בחודש המדווח, בין אם הוא כולל את הקרן בלבד, את הריבית בלבד, או את שניהם.:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalPaidAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל היתרה לתשלום, כולל ריבית וזיקה, בין אם היא עלתה או ירדה. כשאין יתרה לתשלום, וכשיש יתרות אשראי - הערך יהיה אפס (0):</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalCurrentBalance)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכומים (לפני שלוקחים בחשבון חובות בספק וניכויים) שתאריך התשלום שלהם עבר ועדיין לא שולמו (לא כולל תשלומים שזמן הפיגור שלהם אינו עולה על 30 יום):</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalPastDueAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום החוב שנמחק שהוא מעל 200 ₪ הערה: 1. שדה זה כולל פיגורים, ריבית ועמלות שהצטברו עד לתאריך הייחוס אך אינו כולל תשלומי פירעון מוקדם, ריביות עתידיות או פרמיות ביטוח:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalForgivenessAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סכום הביטחונות:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalCollateralCasesAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סימון האם סך כל תובענות פתוחות על החוזים שהסכום הפיגור בהם גדול מ-10,000 ש"ח:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.LegalProcedureImmediate}}</td>
+               </tr>
+               <tr>
+                  <td>האם אותר סטאטוס חריג:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.ExceptionalStatus}}</td>
+               </tr>
+               <tr>
+                  <td>שיעור סך ניצול מסגרת אשראי בחצי השנה האחרונה:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.AverageUtilizationOfRenewableLineOfCreditForThePastSixMonths}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מסגרות אשראי מתחדשות:</td>
+                  <td>{{"₪{:,.2f}".format(V6_RenewableLineOfCreditSummary.TotalOfV6Credit)}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש חוב בטיפול הוצל"פ:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.Q7Any}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש מסגרות מתחדשות בפיגור נכון להיום:</td>
+                  <td>{{V6_RenewableLineOfCreditSummary.ArrearsAny}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

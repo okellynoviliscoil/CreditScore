@@ -1,0 +1,61 @@
+<div class="card">
+   <div class="card-header p-0" id="V5_CurrentAccountSummary">
+      <h5 class="mb-0">
+         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseV5_CurrentAccountSummary" aria-expanded="true" aria-controls="collapseV5_CurrentAccountSummary">
+         סיכום חשבונות בנק
+         </button>
+      </h5>
+   </div>
+   <div id="collapseV5_CurrentAccountSummary" class="collapse" aria-labelledby="V5_CurrentAccountSummary" data-parent="#SubtotalAggregatesBody">
+      <div id="V5_CurrentAccountSummaryBody" class="card-body">
+         <table>
+            <tbody>
+               <tr>
+                  <td>סך כל תקרת האשראי המקסימלית בחודש הדיווח.:</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalCreditLimit)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל מסגרת אשראי מנוצלת. ייקבע הסכום הגבוה ביותר שנוצל בחודש הדיווח.:</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalCreditUtilized)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל היתרה לתשלום, כולל ריבית וזיקה, בין אם היא עלתה או ירדה. כשאין יתרה לתשלום, וכשיש יתרות אשראי - הערך יהיה אפס (0):</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalCurrentBalance)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל הסכומים (לפני שלוקחים בחשבון חובות בספק וניכויים) שתאריך התשלום שלהם עבר ועדיין לא שולמו (לא כולל תשלומים שזמן הפיגור שלהם אינו עולה על 30 יום):</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalPastDueAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל סכום החוב שנמחק שהוא מעל 200 ₪:</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalForgivenessAmount)}}</td>
+               </tr>
+               <tr>
+                  <td>חייב להיות מלא כאשר מקור המידע מודיע על המחאה שחזרה. סך כל הסכום הכולל של ההמחאות שגרמו לאזהרה.:</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalWarningChecksAmountImmediates)}}</td>
+               </tr>
+               <tr>
+                  <td>סך כל חשבונות בנק:</td>
+                  <td>{{"₪{:,.2f}".format(V5_CurrentAccountSummary.TotalOfV5Credit)}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש חוב בטיפול הוצל"פ:</td>
+                  <td>{{V5_CurrentAccountSummary.Q7Any}}</td>
+               </tr>
+               <tr>
+                  <td>האם יש חשבונות בנק בפיגור נכון להיום:</td>
+                  <td>{{V5_CurrentAccountSummary.ArrearsAny}}</td>
+               </tr>
+               <tr>
+                  <td>מספר שקים חוזרים:</td>
+                  <td>{{V5_CurrentAccountSummary.TotalOfBouncedChecks}}</td>
+               </tr>
+               <tr>
+                  <td>מספר הו"ק שלא כובדו:</td>
+                  <td>{{V5_CurrentAccountSummary.TotalOfUnpaidPaymentOrder}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
